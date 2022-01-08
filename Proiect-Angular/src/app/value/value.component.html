@@ -1,0 +1,57 @@
+<style>
+  
+  h2,label {
+    margin: 8px 0;
+    font-family:Arial, Helvetica, sans-serif;
+    color:cornflowerblue;
+  }
+
+  p{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+
+  button{
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: 2px solid cornflowerblue;
+    border-radius: 10px;
+    background-image: cornflowerblue;
+  }
+
+</style>
+
+<h2>Useri</h2>
+<p *ngFor="let user of users">
+  {{"Nume: "}}{{user.Name}},
+  {{"Varsta: "}} {{user.Age}},
+  {{"Id: "}} {{user.UserId}}
+</p>
+
+<br>
+
+<h2>Travel plans</h2>
+<p *ngFor="let travel of empList">
+  {{"Origin: "}}{{travel.Origin}},
+  {{"Destination: "}} {{travel.Destination}},
+  {{"Id travel plan: "}}{{travel.TravelId}},
+  {{"Numele userului: "}}{{travel.userName}}
+</p>
+
+<br>
+
+<form [formGroup]="buton" (ngSubmit)="onClickButon1()">  
+      
+  <p>  
+    <label for="name"><b>Travel Plan ID:</b></label> 
+    <br> 
+    <input type="text" id="name" name="name" formControlName="name" class="form-control">  
+  </p>  
+   
+  <button type="submit" class="btn btn-success">Afisare</button>  
+    
+</form>  
+
+
+<br>
+<div #mapDirection style="width:100%;height:450px"></div>
